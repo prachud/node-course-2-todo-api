@@ -18,7 +18,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',(err,client)=>{
     const db=client.db('TodoApp');
 
     db.collection('Todos').insertOne({
-        text:'Walk the dog',
+        text:'Eat Lunch',
         completed:true
     },(err,result)=>{
         if (err){
@@ -27,7 +27,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',(err,client)=>{
         console.log(JSON.stringify(result.ops,undefined,2));
     }); 
 
-    db.collection('users').insertOne({
+   /*  db.collection('users').insertOne({
         name:'Prav',
         age:35,
         location:'UK'
@@ -36,7 +36,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',(err,client)=>{
             return console.log(`Unable to Insert the data`,err)
           }
           console.log(JSON.stringify(result.ops,undefined,2))
-    });
+    }); */
 
 
     client.close();
